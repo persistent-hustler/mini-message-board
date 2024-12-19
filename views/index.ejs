@@ -1,0 +1,23 @@
+<%- include('layout/header') %>
+
+<main>
+    <h1><%= title %></h1>
+    
+    <div class="messages">
+        <% messages.forEach((message, index) => { %>
+            <div class="message">
+                <p class="message-text"><%= message.text %></p>
+                <p class="message-user">By <%= message.user %></p>
+                <p class="message-date">
+                    Posted on <%= message.added.toLocaleDateString() %>
+                    at <%= message.added.toLocaleTimeString() %>
+                </p>
+                <a href="/message/<%= index %>" class="open-btn">Open Message</a>
+            </div>
+        <% }); %>
+    </div>
+    
+    <a href="/new" class="new-message-btn">Create New Message</a>
+</main>
+
+<%- include('layout/footer') %>
