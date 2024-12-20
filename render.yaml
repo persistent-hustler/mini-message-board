@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: mini-message-board
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
